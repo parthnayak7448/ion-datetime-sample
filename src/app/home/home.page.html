@@ -1,0 +1,59 @@
+<ion-header [translucent]="true">
+	<ion-toolbar>
+		<ion-title>Date Sample App</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+	<ion-header collapse="condense">
+		<ion-toolbar>
+			<ion-title size="large">Date Sample App</ion-title>
+		</ion-toolbar>
+	</ion-header>
+
+	<div>
+		<div class="datetime-header">
+			<ion-button color="danger" (click)="cancelDate()">Reset</ion-button>
+			<ion-button color="primary" (click)="setDate()">Set</ion-button>
+		</div>
+
+		<ion-datetime #datetime presentation="date" size="cover" [(ngModel)]="selectedDate" [max]="maxDate"
+			class="datetimeCalendar">
+		</ion-datetime>
+	</div>
+	<ion-item>
+		<ion-label>Selected Date</ion-label>
+		<ion-label slot="end">{{selectedDate | date: 'dd MMM YYYY'}}</ion-label>
+	</ion-item>
+	<div>
+		<ul>
+			<li>Select the calendar</li>
+			<li>
+				Select the month and year selector
+			</li>
+			<li>
+				Go to any month that has all the dates selectable (ex. {{selectPreviousDate | date:'MMMM'}})
+			</li>
+			<li>
+				Select a date which which is not available for the current month (Ex. {{selectPreviousDate | date:'dd
+				MMMM YYYY'}})
+			</li>
+			<li>
+				Select month and year selector and go to the current month ({{maxDate | date:'MMMM'}})
+			</li>
+			<li>Click Set</li>
+		</ul>
+		<ul >
+			
+				<ion-note color="medium">Notes*</ion-note>
+			<li>
+				<ion-note color="medium">Following above step you will able to see that user can select future date beyond given max date and
+					click continue/set it will display and will print in console</ion-note>
+			<li>
+				<ion-note color="medium">Ionic is showing warning in console when user select future date that date is
+					outbound but it is not restricting</ion-note>
+			</li>
+		</ul>
+
+	</div>
+</ion-content>

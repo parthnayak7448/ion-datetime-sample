@@ -1,0 +1,7 @@
+{
+  "name": "Ion Date Sample App",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
